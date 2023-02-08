@@ -466,10 +466,10 @@ workers:
   # worker and let Kubernetes restart it
   livenessProbe:
     enabled: true
-    initialDelaySeconds: 10
-    timeoutSeconds: 20
-    failureThreshold: 5
-    periodSeconds: 60
+    initialDelaySeconds: 20
+    timeoutSeconds: 40
+    failureThreshold: 10
+    periodSeconds: 120
     command: ~
 
   # Update Strategy when worker is deployed as a StatefulSet
@@ -639,10 +639,10 @@ scheduler:
   # If the scheduler stops heartbeating for 5 minutes (5*60s) kill the
   # scheduler and let Kubernetes restart it
   livenessProbe:
-    initialDelaySeconds: 10
-    timeoutSeconds: 20
-    failureThreshold: 5
-    periodSeconds: 60
+    initialDelaySeconds: 20
+    timeoutSeconds: 40
+    failureThreshold: 10
+    periodSeconds: 120
     command: ~
   # Airflow 2.0 allows users to run multiple schedulers,
   # However this feature is only recommended for MySQL 8+ and Postgres
@@ -898,17 +898,17 @@ migrateDatabaseJob:
 webserver:
   allowPodLogReading: true
   livenessProbe:
-    initialDelaySeconds: 15
-    timeoutSeconds: 30
-    failureThreshold: 20
-    periodSeconds: 5
+    initialDelaySeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 40
+    periodSeconds: 10
     scheme: HTTP
 
   readinessProbe:
-    initialDelaySeconds: 15
-    timeoutSeconds: 30
-    failureThreshold: 20
-    periodSeconds: 5
+    initialDelaySeconds: 30
+    timeoutSeconds: 60
+    failureThreshold: 40
+    periodSeconds: 10
     scheme: HTTP
 
   # Number of webservers
@@ -1079,10 +1079,10 @@ triggerer:
   # If the triggerer stops heartbeating for 5 minutes (5*60s) kill the
   # triggerer and let Kubernetes restart it
   livenessProbe:
-    initialDelaySeconds: 10
-    timeoutSeconds: 20
-    failureThreshold: 5
-    periodSeconds: 60
+    initialDelaySeconds: 20
+    timeoutSeconds: 40
+    failureThreshold: 10
+    periodSeconds: 120
     command: ~
 
   # Create ServiceAccount
@@ -1194,10 +1194,10 @@ dagProcessor:
   # If the dag processor stops heartbeating for 5 minutes (5*60s) kill the
   # dag processor and let Kubernetes restart it
   livenessProbe:
-    initialDelaySeconds: 10
-    timeoutSeconds: 20
-    failureThreshold: 5
-    periodSeconds: 60
+    initialDelaySeconds: 20
+    timeoutSeconds: 40
+    failureThreshold: 10
+    periodSeconds: 120
     command: ~
 
   # Create ServiceAccount
