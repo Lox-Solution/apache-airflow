@@ -9,6 +9,7 @@ entries:
       repository: '@stable'
       version: 12.1.9
     description: Helm chart to deploy Apache Airflow
+    digest: e0fa5d8fefb8426818acdd501a7d866e452c25df7dec4ac30e93a378d59a89c4
     keywords:
     - airflow
     name: airflow
